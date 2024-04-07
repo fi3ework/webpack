@@ -18,18 +18,18 @@ module.exports = (env, { testPath }) => [
 		]
 	},
 	{
-		entry: "./default-test-esm.js",
+		entry: "./default-test-modern-module.js",
 		optimization: {
 			minimize: true
 		},
 		resolve: {
 			alias: {
-				library: path.resolve(testPath, "../0-create-library/esm.js")
+				library: path.resolve(testPath, "../0-create-library/modern-module.js")
 			}
 		},
 		plugins: [
 			new webpack.DefinePlugin({
-				NAME: JSON.stringify("esm-tree-shakable")
+				NAME: JSON.stringify("modern-module-tree-shakable")
 			}),
 			/**
 			 * @this {Compiler} compiler
@@ -43,6 +43,7 @@ module.exports = (env, { testPath }) => [
 					compilation.hooks.afterProcessAssets.tap("testcase", assets => {
 						for (const asset of Object.keys(assets)) {
 							const source = assets[asset].source();
+							// unused exports are tree-shaken
 							expect(source).not.toContain('"a"');
 							expect(source).not.toContain('"b"');
 							expect(source).not.toContain('"non-external"');
