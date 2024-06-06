@@ -5541,11 +5541,6 @@ declare class JavascriptModulesPlugin {
 		chunkRenderContext: ChunkRenderContext,
 		hooks: CompilationHooksJavascriptModulesPlugin
 	): Map<Module, Source>;
-	findNewName(
-		oldName: string,
-		usedName: Set<string>,
-		extraInfo: string
-	): string;
 	static getCompilationHooks(
 		compilation: Compilation
 	): CompilationHooksJavascriptModulesPlugin;
