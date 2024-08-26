@@ -3185,7 +3185,7 @@ export interface JavascriptParserOptions {
 	/**
 	 * Specifies global mode for dynamic import.
 	 */
-	dynamicImportMode?: "eager" | "weak" | "lazy" | "lazy-once";
+	dynamicImportMode?: "eager" | "weak" | "lazy" | "lazy-once" | "raw";
 	/**
 	 * Specifies global prefetch for dynamic import.
 	 */
