@@ -1864,6 +1864,10 @@
           "description": "Enable/disable parsing of import() syntax.",
           "type": "boolean"
         },
+        "importDynamic": {
+          "description": "Enable/disable parsing of import() with non-static modules.",
+          "type": "boolean"
+        },
         "importExportsPresence": {
           "description": "Specifies the behavior of invalid export names in \"import ... from ...\".",
           "enum": ["error", "warn", "auto", false]
@@ -1887,8 +1891,16 @@
           "description": "Specifies the behavior of invalid export names in \"export ... from ...\". This might be useful to disable during the migration from \"export ... from ...\" to \"export type ... from ...\" when reexporting types in TypeScript.",
           "enum": ["error", "warn", "auto", false]
         },
+        "requireAsExpression": {
+          "description": "Enable/disable parsing require as a expression.",
+          "type": "boolean"
+        },
         "requireContext": {
           "description": "Enable/disable parsing of require.context syntax.",
+          "type": "boolean"
+        },
+        "requireDynamic": {
+          "description": "Enable/disable parsing of dynamic require.",
           "type": "boolean"
         },
         "requireEnsure": {
@@ -1901,6 +1913,10 @@
         },
         "requireJs": {
           "description": "Enable/disable parsing of require.js special syntax like require.config, requirejs.config, require.version and requirejs.onError.",
+          "type": "boolean"
+        },
+        "requireResolve": {
+          "description": "Enable/disable parsing of require.resolve syntax.",
           "type": "boolean"
         },
         "strictExportPresence": {

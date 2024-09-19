@@ -2208,6 +2208,19 @@ Object {
     "multiple": false,
     "simpleType": "boolean",
   },
+  "module-parser-javascript-auto-require-dynamic": Object {
+    "configs": Array [
+      Object {
+        "description": "Enable/disable parsing of dynamic require.",
+        "multiple": false,
+        "path": "module.parser.javascript/auto.requireDynamic",
+        "type": "boolean",
+      },
+    ],
+    "description": "Enable/disable parsing of dynamic require.",
+    "multiple": false,
+    "simpleType": "boolean",
+  },
   "module-parser-javascript-auto-require-ensure": Object {
     "configs": Array [
       Object {
@@ -2244,6 +2257,19 @@ Object {
       },
     ],
     "description": "Enable/disable parsing of require.js special syntax like require.config, requirejs.config, require.version and requirejs.onError.",
+    "multiple": false,
+    "simpleType": "boolean",
+  },
+  "module-parser-javascript-auto-require-resolve": Object {
+    "configs": Array [
+      Object {
+        "description": "Enable/disable parsing of require.resolve syntax.",
+        "multiple": false,
+        "path": "module.parser.javascript/auto.requireResolve",
+        "type": "boolean",
+      },
+    ],
+    "description": "Enable/disable parsing of require.resolve syntax.",
     "multiple": false,
     "simpleType": "boolean",
   },
@@ -2994,6 +3020,19 @@ Object {
     "multiple": false,
     "simpleType": "boolean",
   },
+  "module-parser-javascript-dynamic-require-dynamic": Object {
+    "configs": Array [
+      Object {
+        "description": "Enable/disable parsing of dynamic require.",
+        "multiple": false,
+        "path": "module.parser.javascript/dynamic.requireDynamic",
+        "type": "boolean",
+      },
+    ],
+    "description": "Enable/disable parsing of dynamic require.",
+    "multiple": false,
+    "simpleType": "boolean",
+  },
   "module-parser-javascript-dynamic-require-ensure": Object {
     "configs": Array [
       Object {
@@ -3030,6 +3069,19 @@ Object {
       },
     ],
     "description": "Enable/disable parsing of require.js special syntax like require.config, requirejs.config, require.version and requirejs.onError.",
+    "multiple": false,
+    "simpleType": "boolean",
+  },
+  "module-parser-javascript-dynamic-require-resolve": Object {
+    "configs": Array [
+      Object {
+        "description": "Enable/disable parsing of require.resolve syntax.",
+        "multiple": false,
+        "path": "module.parser.javascript/dynamic.requireResolve",
+        "type": "boolean",
+      },
+    ],
+    "description": "Enable/disable parsing of require.resolve syntax.",
     "multiple": false,
     "simpleType": "boolean",
   },
@@ -3646,6 +3698,19 @@ Object {
     "multiple": false,
     "simpleType": "boolean",
   },
+  "module-parser-javascript-esm-require-dynamic": Object {
+    "configs": Array [
+      Object {
+        "description": "Enable/disable parsing of dynamic require.",
+        "multiple": false,
+        "path": "module.parser.javascript/esm.requireDynamic",
+        "type": "boolean",
+      },
+    ],
+    "description": "Enable/disable parsing of dynamic require.",
+    "multiple": false,
+    "simpleType": "boolean",
+  },
   "module-parser-javascript-esm-require-ensure": Object {
     "configs": Array [
       Object {
@@ -3682,6 +3747,19 @@ Object {
       },
     ],
     "description": "Enable/disable parsing of require.js special syntax like require.config, requirejs.config, require.version and requirejs.onError.",
+    "multiple": false,
+    "simpleType": "boolean",
+  },
+  "module-parser-javascript-esm-require-resolve": Object {
+    "configs": Array [
+      Object {
+        "description": "Enable/disable parsing of require.resolve syntax.",
+        "multiple": false,
+        "path": "module.parser.javascript/esm.requireResolve",
+        "type": "boolean",
+      },
+    ],
+    "description": "Enable/disable parsing of require.resolve syntax.",
     "multiple": false,
     "simpleType": "boolean",
   },
@@ -4148,6 +4226,19 @@ Object {
     "multiple": false,
     "simpleType": "boolean",
   },
+  "module-parser-javascript-require-dynamic": Object {
+    "configs": Array [
+      Object {
+        "description": "Enable/disable parsing of dynamic require.",
+        "multiple": false,
+        "path": "module.parser.javascript.requireDynamic",
+        "type": "boolean",
+      },
+    ],
+    "description": "Enable/disable parsing of dynamic require.",
+    "multiple": false,
+    "simpleType": "boolean",
+  },
   "module-parser-javascript-require-ensure": Object {
     "configs": Array [
       Object {
@@ -4184,6 +4275,19 @@ Object {
       },
     ],
     "description": "Enable/disable parsing of require.js special syntax like require.config, requirejs.config, require.version and requirejs.onError.",
+    "multiple": false,
+    "simpleType": "boolean",
+  },
+  "module-parser-javascript-require-resolve": Object {
+    "configs": Array [
+      Object {
+        "description": "Enable/disable parsing of require.resolve syntax.",
+        "multiple": false,
+        "path": "module.parser.javascript.requireResolve",
+        "type": "boolean",
+      },
+    ],
+    "description": "Enable/disable parsing of require.resolve syntax.",
     "multiple": false,
     "simpleType": "boolean",
   },

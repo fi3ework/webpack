@@ -6733,6 +6733,11 @@ declare interface JavascriptParserOptions {
 	import?: boolean;
 
 	/**
+	 * Enable/disable parsing of import() with non-static modules.
+	 */
+	importDynamic?: boolean;
+
+	/**
 	 * Specifies the behavior of invalid export names in "import ... from ...".
 	 */
 	importExportsPresence?: false | "auto" | "error" | "warn";
@@ -6763,9 +6768,19 @@ declare interface JavascriptParserOptions {
 	reexportExportsPresence?: false | "auto" | "error" | "warn";
 
 	/**
+	 * Enable/disable parsing require as a expression.
+	 */
+	requireAsExpression?: boolean;
+
+	/**
 	 * Enable/disable parsing of require.context syntax.
 	 */
 	requireContext?: boolean;
+
+	/**
+	 * Enable/disable parsing of dynamic require.
+	 */
+	requireDynamic?: boolean;
 
 	/**
 	 * Enable/disable parsing of require.ensure syntax.
@@ -6781,6 +6796,11 @@ declare interface JavascriptParserOptions {
 	 * Enable/disable parsing of require.js special syntax like require.config, requirejs.config, require.version and requirejs.onError.
 	 */
 	requireJs?: boolean;
+
+	/**
+	 * Enable/disable parsing of require.resolve syntax.
+	 */
+	requireResolve?: boolean;
 
 	/**
 	 * Deprecated in favor of "exportsPresence". Emit errors instead of warnings when imported names don't exist in imported module.
