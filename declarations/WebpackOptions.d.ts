@@ -3109,6 +3109,10 @@ export interface ExternalItemFunctionData {
 	 */
 	dependencyType?: string;
 	/**
+	 * The type of the referencing dependencies.
+	 */
+	dependencyType2?: string;
+	/**
 	 * Get a resolve function with the current resolver options.
 	 */
 	getResolve?: (

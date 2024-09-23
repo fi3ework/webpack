@@ -1175,6 +1175,10 @@
           "description": "The category of the referencing dependencies.",
           "type": "string"
         },
+        "dependencyType2": {
+          "description": "The type of the referencing dependencies.",
+          "type": "string"
+        },
         "getResolve": {
           "description": "Get a resolve function with the current resolver options.",
           "instanceof": "Function",
