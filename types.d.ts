@@ -3022,7 +3022,7 @@ declare interface ContainerReferencePluginOptions {
 	/**
 	 * The external type of the remote containers.
 	 */
-	remoteType: ExternalsTypeContainerReferencePlugin;
+	remoteType: ExternalsType;
 
 	/**
 	 * Container locations and request scopes from which modules should be resolved and loaded at runtime. When provided, property name is used as request scope, otherwise request scope is automatically inferred from container location.
@@ -4749,8 +4749,320 @@ type Externals =
 	  ) => void)
 	| ((data: ExternalItemFunctionData) => Promise<ExternalItemValue>);
 declare class ExternalsPlugin {
-	constructor(type: ExternalsTypeWebpackOptions, externals: Externals);
-	type: ExternalsTypeWebpackOptions;
+	constructor(
+		type:
+			| undefined
+			| "import"
+			| "var"
+			| "module"
+			| "assign"
+			| "this"
+			| "window"
+			| "self"
+			| "global"
+			| "commonjs"
+			| "commonjs2"
+			| "commonjs-module"
+			| "commonjs-static"
+			| "amd"
+			| "amd-require"
+			| "umd"
+			| "umd2"
+			| "jsonp"
+			| "system"
+			| {
+					/**
+					 * Specifies the default type of externals ('amd*', 'umd*', 'system' and 'jsonp' depend on output.libraryTarget set to the same value).
+					 */
+					amd?:
+						| "import"
+						| "var"
+						| "module"
+						| "assign"
+						| "this"
+						| "window"
+						| "self"
+						| "global"
+						| "commonjs"
+						| "commonjs2"
+						| "commonjs-module"
+						| "commonjs-static"
+						| "amd"
+						| "amd-require"
+						| "umd"
+						| "umd2"
+						| "jsonp"
+						| "system"
+						| "promise"
+						| "module-import"
+						| "script"
+						| "node-commonjs";
+					/**
+					 * Specifies the default type of externals ('amd*', 'umd*', 'system' and 'jsonp' depend on output.libraryTarget set to the same value).
+					 */
+					commonjs?:
+						| "import"
+						| "var"
+						| "module"
+						| "assign"
+						| "this"
+						| "window"
+						| "self"
+						| "global"
+						| "commonjs"
+						| "commonjs2"
+						| "commonjs-module"
+						| "commonjs-static"
+						| "amd"
+						| "amd-require"
+						| "umd"
+						| "umd2"
+						| "jsonp"
+						| "system"
+						| "promise"
+						| "module-import"
+						| "script"
+						| "node-commonjs";
+					/**
+					 * Specifies the default type of externals ('amd*', 'umd*', 'system' and 'jsonp' depend on output.libraryTarget set to the same value).
+					 */
+					"dynamic-import"?:
+						| "import"
+						| "var"
+						| "module"
+						| "assign"
+						| "this"
+						| "window"
+						| "self"
+						| "global"
+						| "commonjs"
+						| "commonjs2"
+						| "commonjs-module"
+						| "commonjs-static"
+						| "amd"
+						| "amd-require"
+						| "umd"
+						| "umd2"
+						| "jsonp"
+						| "system"
+						| "promise"
+						| "module-import"
+						| "script"
+						| "node-commonjs";
+					/**
+					 * Specifies the default type of externals ('amd*', 'umd*', 'system' and 'jsonp' depend on output.libraryTarget set to the same value).
+					 */
+					fallback?:
+						| "import"
+						| "var"
+						| "module"
+						| "assign"
+						| "this"
+						| "window"
+						| "self"
+						| "global"
+						| "commonjs"
+						| "commonjs2"
+						| "commonjs-module"
+						| "commonjs-static"
+						| "amd"
+						| "amd-require"
+						| "umd"
+						| "umd2"
+						| "jsonp"
+						| "system"
+						| "promise"
+						| "module-import"
+						| "script"
+						| "node-commonjs";
+					/**
+					 * Specifies the default type of externals ('amd*', 'umd*', 'system' and 'jsonp' depend on output.libraryTarget set to the same value).
+					 */
+					"static-import"?:
+						| "import"
+						| "var"
+						| "module"
+						| "assign"
+						| "this"
+						| "window"
+						| "self"
+						| "global"
+						| "commonjs"
+						| "commonjs2"
+						| "commonjs-module"
+						| "commonjs-static"
+						| "amd"
+						| "amd-require"
+						| "umd"
+						| "umd2"
+						| "jsonp"
+						| "system"
+						| "promise"
+						| "module-import"
+						| "script"
+						| "node-commonjs";
+			  }
+			| "promise"
+			| "module-import"
+			| "script"
+			| "node-commonjs",
+		externals: Externals
+	);
+	type?:
+		| "import"
+		| "var"
+		| "module"
+		| "assign"
+		| "this"
+		| "window"
+		| "self"
+		| "global"
+		| "commonjs"
+		| "commonjs2"
+		| "commonjs-module"
+		| "commonjs-static"
+		| "amd"
+		| "amd-require"
+		| "umd"
+		| "umd2"
+		| "jsonp"
+		| "system"
+		| {
+				/**
+				 * Specifies the default type of externals ('amd*', 'umd*', 'system' and 'jsonp' depend on output.libraryTarget set to the same value).
+				 */
+				amd?:
+					| "import"
+					| "var"
+					| "module"
+					| "assign"
+					| "this"
+					| "window"
+					| "self"
+					| "global"
+					| "commonjs"
+					| "commonjs2"
+					| "commonjs-module"
+					| "commonjs-static"
+					| "amd"
+					| "amd-require"
+					| "umd"
+					| "umd2"
+					| "jsonp"
+					| "system"
+					| "promise"
+					| "module-import"
+					| "script"
+					| "node-commonjs";
+				/**
+				 * Specifies the default type of externals ('amd*', 'umd*', 'system' and 'jsonp' depend on output.libraryTarget set to the same value).
+				 */
+				commonjs?:
+					| "import"
+					| "var"
+					| "module"
+					| "assign"
+					| "this"
+					| "window"
+					| "self"
+					| "global"
+					| "commonjs"
+					| "commonjs2"
+					| "commonjs-module"
+					| "commonjs-static"
+					| "amd"
+					| "amd-require"
+					| "umd"
+					| "umd2"
+					| "jsonp"
+					| "system"
+					| "promise"
+					| "module-import"
+					| "script"
+					| "node-commonjs";
+				/**
+				 * Specifies the default type of externals ('amd*', 'umd*', 'system' and 'jsonp' depend on output.libraryTarget set to the same value).
+				 */
+				"dynamic-import"?:
+					| "import"
+					| "var"
+					| "module"
+					| "assign"
+					| "this"
+					| "window"
+					| "self"
+					| "global"
+					| "commonjs"
+					| "commonjs2"
+					| "commonjs-module"
+					| "commonjs-static"
+					| "amd"
+					| "amd-require"
+					| "umd"
+					| "umd2"
+					| "jsonp"
+					| "system"
+					| "promise"
+					| "module-import"
+					| "script"
+					| "node-commonjs";
+				/**
+				 * Specifies the default type of externals ('amd*', 'umd*', 'system' and 'jsonp' depend on output.libraryTarget set to the same value).
+				 */
+				fallback?:
+					| "import"
+					| "var"
+					| "module"
+					| "assign"
+					| "this"
+					| "window"
+					| "self"
+					| "global"
+					| "commonjs"
+					| "commonjs2"
+					| "commonjs-module"
+					| "commonjs-static"
+					| "amd"
+					| "amd-require"
+					| "umd"
+					| "umd2"
+					| "jsonp"
+					| "system"
+					| "promise"
+					| "module-import"
+					| "script"
+					| "node-commonjs";
+				/**
+				 * Specifies the default type of externals ('amd*', 'umd*', 'system' and 'jsonp' depend on output.libraryTarget set to the same value).
+				 */
+				"static-import"?:
+					| "import"
+					| "var"
+					| "module"
+					| "assign"
+					| "this"
+					| "window"
+					| "self"
+					| "global"
+					| "commonjs"
+					| "commonjs2"
+					| "commonjs-module"
+					| "commonjs-static"
+					| "amd"
+					| "amd-require"
+					| "umd"
+					| "umd2"
+					| "jsonp"
+					| "system"
+					| "promise"
+					| "module-import"
+					| "script"
+					| "node-commonjs";
+		  }
+		| "promise"
+		| "module-import"
+		| "script"
+		| "node-commonjs";
 	externals: Externals;
 
 	/**
@@ -4803,7 +5115,7 @@ declare interface ExternalsPresets {
 	 */
 	webAsync?: boolean;
 }
-type ExternalsTypeContainerReferencePlugin =
+type ExternalsType =
 	| "import"
 	| "var"
 	| "module"
@@ -4958,161 +5270,6 @@ type ExternalsTypeContainerReferencePlugin =
 				| "script"
 				| "node-commonjs";
 	  };
-type ExternalsTypeWebpackOptions =
-	| "import"
-	| "var"
-	| "module"
-	| "assign"
-	| "this"
-	| "window"
-	| "self"
-	| "global"
-	| "commonjs"
-	| "commonjs2"
-	| "commonjs-module"
-	| "commonjs-static"
-	| "amd"
-	| "amd-require"
-	| "umd"
-	| "umd2"
-	| "jsonp"
-	| "system"
-	| {
-			/**
-			 * Specifies the default type of externals ('amd*', 'umd*', 'system' and 'jsonp' depend on output.libraryTarget set to the same value).
-			 */
-			amd?:
-				| "import"
-				| "var"
-				| "module"
-				| "assign"
-				| "this"
-				| "window"
-				| "self"
-				| "global"
-				| "commonjs"
-				| "commonjs2"
-				| "commonjs-module"
-				| "commonjs-static"
-				| "amd"
-				| "amd-require"
-				| "umd"
-				| "umd2"
-				| "jsonp"
-				| "system"
-				| "promise"
-				| "module-import"
-				| "script"
-				| "node-commonjs";
-			/**
-			 * Specifies the default type of externals ('amd*', 'umd*', 'system' and 'jsonp' depend on output.libraryTarget set to the same value).
-			 */
-			commonjs?:
-				| "import"
-				| "var"
-				| "module"
-				| "assign"
-				| "this"
-				| "window"
-				| "self"
-				| "global"
-				| "commonjs"
-				| "commonjs2"
-				| "commonjs-module"
-				| "commonjs-static"
-				| "amd"
-				| "amd-require"
-				| "umd"
-				| "umd2"
-				| "jsonp"
-				| "system"
-				| "promise"
-				| "module-import"
-				| "script"
-				| "node-commonjs";
-			/**
-			 * Specifies the default type of externals ('amd*', 'umd*', 'system' and 'jsonp' depend on output.libraryTarget set to the same value).
-			 */
-			"dynamic-import"?:
-				| "import"
-				| "var"
-				| "module"
-				| "assign"
-				| "this"
-				| "window"
-				| "self"
-				| "global"
-				| "commonjs"
-				| "commonjs2"
-				| "commonjs-module"
-				| "commonjs-static"
-				| "amd"
-				| "amd-require"
-				| "umd"
-				| "umd2"
-				| "jsonp"
-				| "system"
-				| "promise"
-				| "module-import"
-				| "script"
-				| "node-commonjs";
-			/**
-			 * Specifies the default type of externals ('amd*', 'umd*', 'system' and 'jsonp' depend on output.libraryTarget set to the same value).
-			 */
-			fallback?:
-				| "import"
-				| "var"
-				| "module"
-				| "assign"
-				| "this"
-				| "window"
-				| "self"
-				| "global"
-				| "commonjs"
-				| "commonjs2"
-				| "commonjs-module"
-				| "commonjs-static"
-				| "amd"
-				| "amd-require"
-				| "umd"
-				| "umd2"
-				| "jsonp"
-				| "system"
-				| "promise"
-				| "module-import"
-				| "script"
-				| "node-commonjs";
-			/**
-			 * Specifies the default type of externals ('amd*', 'umd*', 'system' and 'jsonp' depend on output.libraryTarget set to the same value).
-			 */
-			"static-import"?:
-				| "import"
-				| "var"
-				| "module"
-				| "assign"
-				| "this"
-				| "window"
-				| "self"
-				| "global"
-				| "commonjs"
-				| "commonjs2"
-				| "commonjs-module"
-				| "commonjs-static"
-				| "amd"
-				| "amd-require"
-				| "umd"
-				| "umd2"
-				| "jsonp"
-				| "system"
-				| "promise"
-				| "module-import"
-				| "script"
-				| "node-commonjs";
-	  }
-	| "promise"
-	| "module-import"
-	| "script"
-	| "node-commonjs";
 declare interface FSImplementation {
 	open?: (...args: any[]) => any;
 	close?: (...args: any[]) => any;
